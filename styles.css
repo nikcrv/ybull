@@ -354,6 +354,7 @@ body {
     max-width: 420px;
     padding: 0;
     animation: slideIn 0.2s ease;
+    z-index: 10001;
 }
 
 @keyframes slideIn {
@@ -1204,6 +1205,7 @@ label:has(input[type='radio']:checked) {
 
 /* Modal Content */
 .modal-content {
+    position: relative;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 16px;
@@ -1212,6 +1214,7 @@ label:has(input[type='radio']:checked) {
     width: 90%;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease-out;
+    z-index: 10001;
 }
 
 @keyframes slideUp {

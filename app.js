@@ -156,7 +156,23 @@ async function connectWallet() {
         walletProvider = getWalletProvider();
 
         if (!walletProvider) {
-            showToast('Please install MetaMask, Rabby or another Web3 wallet');
+            // Show error message in modal
+            const modalBody = document.querySelector('#walletModal .modal-body');
+            if (modalBody) {
+                modalBody.innerHTML = `
+                    <div style="padding: 24px; text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">⚠️</div>
+                        <h3 style="margin: 0 0 12px 0; color: var(--text-primary);">No Wallet Detected</h3>
+                        <p style="margin: 0 0 24px 0; color: var(--text-secondary); line-height: 1.6;">
+                            Please install a Web3 wallet extension (Rabby, MetaMask, or else ERC20 wallets) to connect to this marketplace.
+                        </p>
+                        <button class="btn-primary" onclick="location.reload()">
+                            Refresh Page
+                        </button>
+                    </div>
+                `;
+            }
+            showToast('Please install Rabby, MetaMask or another Web3 wallet');
             return;
         }
 
