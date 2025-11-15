@@ -1229,17 +1229,6 @@ function showSuccessModal(message) {
 
         closeBtn.addEventListener('click', handleClose);
         modal.addEventListener('click', handleOverlayClick);
-
-        // Re-init button gradient for the modal button
-        if (typeof initButtonGradients === 'function') {
-            setTimeout(() => {
-                const buttons = modal.querySelectorAll('.btn-primary, .btn-secondary');
-                buttons.forEach(button => {
-                    button.addEventListener('mousemove', handleButtonHover);
-                    button.addEventListener('mouseleave', handleButtonLeave);
-                });
-            }, 0);
-        }
     });
 }
 
